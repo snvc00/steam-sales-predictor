@@ -16,7 +16,7 @@ import {
 
 import { makeStyles } from '@material-ui/core/styles';
 
-import { FavoriteIcon, ExpandMoreIcon, StoreIcon, SportsEsportsIcon, DateRangeIcon } from '@material-ui/icons/Favorite';
+import { Favorite, ExpandMore, Store, SportsEsports, DateRange } from '@material-ui/icons';
 
 import { Alert, Rating } from '@material-ui/lab';
 
@@ -61,77 +61,79 @@ function GameCard() {
   };
 
   return (
-    <Card className={classes.root}>
-      <CardHeader
-        avatar={<Avatar aria-label="recipe" className={classes.avatar}><SportsEsportsIcon /></Avatar>}
-        title="Sekiro: Shadows Die Twice"
-        subheader="From Software"
-      />
+    <div>
+      <Card className={classes.root}>
+        <CardHeader
+          avatar={<Avatar aria-label="recipe" className={classes.avatar}><SportsEsports /></Avatar>}
+          title="Sekiro: Shadows Die Twice"
+          subheader="From Software"
+        />
 
-      <CardMedia
-        className={classes.media}
-        image="https://www.sekirothegame.com/content/dam/atvi/sekiro/gallery/Sekiro_24.jpg"
-        title="Sekiro: Shadows Die Twice"
-      />
+        <CardMedia
+          className={classes.media}
+          image="https://www.sekirothegame.com/content/dam/atvi/sekiro/gallery/Sekiro_24.jpg"
+          title="Sekiro: Shadows Die Twice"
+        />
 
-      <CardContent>
-        <Alert icon={<DateRangeIcon fontSize="inherit" />} severity="success" variant=""><b>Next sale prediction:</b> December 2020</Alert>
-        <br />
-        <Typography variant="body2" color="textSecondary" component="p">
-          Game of the Year - The Game Awards 2019, Best Action Game of 2019 - IGN.
-          Carve your own...
-                </Typography>
-        <br />
-        <Box className={classes.metacriticScore} component="fieldset" mb={3} borderColor="transparent">
-          <Typography component="legend">Metacritic Score:</Typography>
-          <Rating name="read-only" value={5} readOnly />
-        </Box>
-      </CardContent>
-
-      <CardActions disableSpacing>
-        <IconButton aria-label="Add to favorites"><FavoriteIcon /></IconButton>
-        <IconButton aria-label="Open in Steam"><StoreIcon /></IconButton>
-        <IconButton
-          className={clsx(classes.expand, { [classes.expandOpen]: expanded, })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="Show more...">
-          <ExpandMoreIcon />
-        </IconButton>
-      </CardActions>
-
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Title:</Typography>
-          <Typography paragraph variant="body2" color="textSecondary" component="p">
-            Sekiro: Shadows Die Twice
-                    </Typography>
-
-          <Typography paragraph>Description:</Typography>
-          <Typography paragraph variant="body2" color="textSecondary" component="p">
+          <Alert icon={<DateRange fontSize="inherit" />} severity="success" variant=""><b>Next sale prediction:</b> December 2020</Alert>
+          <br />
+          <Typography variant="body2" color="textSecondary" component="p">
             Game of the Year - The Game Awards 2019, Best Action Game of 2019 - IGN.
-            Carve your own clever path to vengeance in the award winning adventure from
-            developer FromSoftware, creators of Bloodborne and the Dark Souls series.
-            Take Revenge. Restore Your Honor. Kill Ingeniously.
-                    </Typography>
-
-          <Typography paragraph>Developer:</Typography>
-          <Typography paragraph variant="body2" color="textSecondary" component="p">
-            From Software
-                    </Typography>
-
-          <Typography paragraph>Release Date:</Typography>
-          <Typography paragraph variant="body2" color="textSecondary" component="p">
-            21 March, 2019
-                    </Typography>
-
-          <Typography paragraph>Genre:</Typography>
-          <Typography paragraph variant="body2" color="textSecondary" component="p">
-            Action, Adventure
-                    </Typography>
+            Carve your own...
+                  </Typography>
+          <br />
+          <Box className={classes.metacriticScore} component="fieldset" mb={3} borderColor="transparent">
+            <Typography component="legend">Metacritic Score:</Typography>
+            <Rating name="read-only" value={5} readOnly />
+          </Box>
         </CardContent>
-      </Collapse>
-    </Card>
+
+        <CardActions disableSpacing>
+          <IconButton aria-label="Add to favorites"><Favorite /></IconButton>
+          <IconButton aria-label="Open in Steam"><Store /></IconButton>
+          <IconButton
+            className={clsx(classes.expand, { [classes.expandOpen]: expanded, })}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="Show more...">
+            <ExpandMore />
+          </IconButton>
+        </CardActions>
+
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent>
+            <Typography paragraph>Title:</Typography>
+            <Typography paragraph variant="body2" color="textSecondary" component="p">
+              Sekiro: Shadows Die Twice
+                      </Typography>
+
+            <Typography paragraph>Description:</Typography>
+            <Typography paragraph variant="body2" color="textSecondary" component="p">
+              Game of the Year - The Game Awards 2019, Best Action Game of 2019 - IGN.
+              Carve your own clever path to vengeance in the award winning adventure from
+              developer FromSoftware, creators of Bloodborne and the Dark Souls series.
+              Take Revenge. Restore Your Honor. Kill Ingeniously.
+                      </Typography>
+
+            <Typography paragraph>Developer:</Typography>
+            <Typography paragraph variant="body2" color="textSecondary" component="p">
+              From Software
+                      </Typography>
+
+            <Typography paragraph>Release Date:</Typography>
+            <Typography paragraph variant="body2" color="textSecondary" component="p">
+              21 March, 2019
+                      </Typography>
+
+            <Typography paragraph>Genre:</Typography>
+            <Typography paragraph variant="body2" color="textSecondary" component="p">
+              Action, Adventure
+                      </Typography>
+          </CardContent>
+        </Collapse>
+      </Card>
+    </div>
   );
 }
 
