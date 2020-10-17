@@ -11,7 +11,7 @@ function HomePage() {
     axios({
       method: 'get',
       withCredentials: true,
-      url: 'http://localhost:4000/user', // server location //TODO: use a json file or something
+      url: `${process.env.REACT_APP_SERVER_ENDPOINT}/users`,
     }).then((res) => {
       setData(res.data);
       console.log(res.data);

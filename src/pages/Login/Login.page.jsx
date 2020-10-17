@@ -35,7 +35,7 @@ function Login() {
         password: password
       },
       withCredentials: true,
-      url: 'http://localhost:4000/login', // server location //TODO: use a json file or something
+      url: `${process.env.REACT_APP_SERVER_ENDPOINT}/login`,
     }).then((res) => console.log(res));
   };
 

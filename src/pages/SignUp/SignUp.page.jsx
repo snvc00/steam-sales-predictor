@@ -35,11 +35,10 @@ function SignUp() {
       data: {
         name: name,
         username: user,
-        password: password,
-        confirmPassword: confirmPassword
+        password: password
       },
       withCredentials: true,
-      url: 'http://localhost:4000/signup', // server location //TODO: use a json file or something
+      url: `${process.env.REACT_APP_SERVER_ENDPOINT}/signup`,
     }).then((res) => console.log(res));
   };
 
@@ -49,7 +48,7 @@ function SignUp() {
       <h2 className="title">Sign Up</h2>
       <p className="subtitle">
         Welcome to Steam Sales Predictor
-            </p>
+      </p>
       <form autoComplete="off">
         <TextField
           required
